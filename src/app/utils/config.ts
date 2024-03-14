@@ -1,1 +1,1 @@
-export const POSTS_URL = process.env.NEXT_PUBLIC_POSTS_URL;
+export const POSTS_API_URL = process.env.NEXT_PUBLIC_POSTS_URL;
