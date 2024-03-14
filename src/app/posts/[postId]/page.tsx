@@ -5,7 +5,11 @@ import { useQuery } from "@tanstack/react-query";
 
 import { getPost } from "@/app/services/postServices";
 
-const Post = ({ params: { postId } }: { params: { postId: string } }) => {
+export default function Post({
+  params: { postId },
+}: {
+  params: { postId: string };
+}) {
   const router = useRouter();
   const {
     isLoading,
@@ -61,6 +65,4 @@ const Post = ({ params: { postId } }: { params: { postId: string } }) => {
       </div>
     </div>
   );
-};
-
-export default Post;
+}

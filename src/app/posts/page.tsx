@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Post } from "../types";
 import { getPosts } from "../services/postServices";
 
-export const Posts = () => {
+export default function Posts() {
   const {
     isLoading,
     data: postList,
@@ -39,6 +39,4 @@ export const Posts = () => {
       </ul>
     </div>
   );
-};
-
-export default Posts;
+}
