@@ -18,7 +18,7 @@ export default function Posts() {
 
   if (isLoading) return <p className="text-center my-10">Loading...</p>;
 
-  if (error) return <p className="mb-5">{error.message}</p>;
+  if (error) return <p className="my-10 text-center">{error.message}</p>;
 
   if (!postList?.length)
     return <p className="text-center my-10">No posts found.</p>;
