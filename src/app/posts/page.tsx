@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Post } from "../types";
 import { getPosts } from "../services/postServices";
 
-export const PostsPage = () => {
+export const Posts = () => {
   const {
     isLoading,
     data: postList,
@@ -41,4 +41,4 @@ export const PostsPage = () => {
   );
 };
 
-export default PostsPage;
+export default Posts;

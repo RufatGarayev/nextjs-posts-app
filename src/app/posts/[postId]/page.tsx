@@ -5,14 +5,13 @@ import { useQuery } from "@tanstack/react-query";
 
 import { getPost } from "@/app/services/postServices";
 
-const PostPage = ({ params: { postId } }: { params: { postId: string } }) => {
+const Post = ({ params: { postId } }: { params: { postId: string } }) => {
   const router = useRouter();
   const {
     isLoading,
     isFetching,
     data: post,
     error,
-    refetch,
   } = useQuery({
     queryKey: ["post"],
     queryFn: () => getPost(postId),
@@ -31,9 +30,9 @@ const PostPage = ({ params: { postId } }: { params: { postId: string } }) => {
 
         <button
           className="bg-gray-300 hover:bg-gray-400 text-gray-800 text-sm font-bold py-2 px-4 mr-1 rounded"
-          onClick={() => refetch()}
+          onClick={() => router.back()}
         >
-          Refetch Data
+          Go Back
         </button>
       </div>
     );
@@ -46,6 +45,7 @@ const PostPage = ({ params: { postId } }: { params: { postId: string } }) => {
 
       <div className="mt-5 flex justify-center">
         <button
+          disabled={Number(postId) === 1}
           className="bg-gray-300 hover:bg-gray-400 text-gray-800 text-sm font-bold py-2 px-4 mr-1 rounded"
           onClick={() => router.push(`/posts/${prevPostId}`)}
         >
@@ -63,4 +63,4 @@ const PostPage = ({ params: { postId } }: { params: { postId: string } }) => {
   );
 };
 
-export default PostPage;
+export default Post;
