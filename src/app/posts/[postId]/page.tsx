@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 
-import getPost from "../../../../lib/getPost";
+import { getPost } from "@/app/services/postServices";
 
 const PostPage = ({ params: { postId } }: { params: { postId: string } }) => {
   const router = useRouter();

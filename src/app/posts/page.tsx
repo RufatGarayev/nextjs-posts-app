@@ -3,8 +3,8 @@
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 
-import getPosts from "../../../lib/getPosts";
 import { Post } from "../types";
+import { getPosts } from "../services/postServices";
 
 export const PostsPage = () => {
   const {
